@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Armin F.",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "rgb1", "top": 44.5, "left": 287, "attrs": {} },
+    { "type": "wokwi-ky-040", "id": "encoder1", "top": -75.1, "left": 18.4, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "rgb2", "top": 92.5, "left": 315.8, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "rgb3", "top": 121.3, "left": 277.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "rgb1:VDD", "uno:5V", "red", [ "h0" ] ],
+    [ "rgb1:VSS", "uno:GND.3", "black", [ "v0" ] ],
+    [ "encoder1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "encoder1:VCC", "uno:3.3V", "red", [ "h28.8", "v317.2" ] ],
+    [ "encoder1:CLK", "uno:2", "cyan", [ "h0" ] ],
+    [ "encoder1:DT", "uno:3", "yellow", [ "h0" ] ],
+    [ "encoder1:SW", "uno:4", "magenta", [ "h0" ] ],
+    [ "rgb1:DIN", "uno:7", "yellow", [ "v9.6", "h-186.2" ] ],
+    [ "rgb1:DOUT", "rgb2:DIN", "green", [ "h0" ] ],
+    [ "rgb2:DOUT", "rgb3:DIN", "green", [ "h0" ] ],
+    [ "rgb3:VSS", "uno:GND.3", "black", [ "v0" ] ],
+    [ "rgb2:VSS", "uno:GND.3", "black", [ "v0" ] ],
+    [ "rgb2:VDD", "uno:5V", "red", [ "h0" ] ],
+    [ "rgb3:VDD", "uno:5V", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
